@@ -1,0 +1,262 @@
+%%
+% Please see https://bitbucket.org/rivanvx/beamer/wiki/Home for obtaining beamer.
+%%
+\documentclass{beamer}
+
+\mode<presentation> {
+%\usetheme{default}
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+%\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+\usetheme{Warsaw}
+\usecolortheme{orchid}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{section in toc}[ball unnumbered]
+\setbeamertemplate{subsection in toc}[ball unnumbered]
+}
+
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+%\usepackage{listings}
+%\usepackage{pythonhighlight}
+\usepackage{minted}
+\usepackage{fontawesome}
+
+\author{João Rebelo Pires}
+\institute[DCC]{NUCC-FCUP (DCC)}
+\title[Python com Class]{Python: Um Workshop Orientado a Objectos}
+\date{18 de Fevereiro de 2018}
+
+\newminted{python}{fontsize=\normalsize,
+linenos=false,
+numbersep=10pt,
+gobble=0,
+frame=none,
+breaklines}
+
+\newminted{pycon}{bgcolor=bg, linenos=true, tabsize=4}
+\setminted[pycon]{autogobble}
+
+\begin{document}
+	%-------------------------------------------------
+	%--- Cover
+	%-------------------------------------------------
+	\begin{frame}
+		\titlepage
+	\end{frame}
+	
+	%-------------------------------------------------
+	%--- Table of Contents
+	%-------------------------------------------------
+	\begin{frame}
+		\frametitle{Conteúdos}
+		\tableofcontents
+	\end{frame}
+	
+	%-------------------------------------------------
+	%--- Section 1: Language overview
+	%-------------------------------------------------
+	\section{História}
+	%-------------------------------------------------
+	\begin{frame}
+		\frametitle{História}
+		\begin{itemize}
+			\item Criado por Guido van Rossum; \pause
+			\item Lançado pela primeira vez em 1991; \pause
+			\item Nome é referência aos Monty Python; \pause
+			\item Linguagem multi-paradigma; \pause
+			\item Fornece construtores que permitem programação "limpa" a qualquer escala.
+		\end{itemize}
+	\end{frame}
+	
+	%-------------------------------------------------
+	%--- Section 2: Simple programs
+	%-------------------------------------------------
+	\section{Programas Simples}
+	%-------------------------------------------------
+	\subsection*{Hello World (típico...)}
+	\begin{frame}[fragile]
+		\frametitle{Hello World (típico...)}
+		Tão simples como:
+		\vspace{10pt}
+		\inputminted{python}{helloWorld.py}
+	\end{frame}
+	
+	\subsection*{Somar dois números introduzidos pelo utilizador}
+	\begin{frame}[fragile]
+		\frametitle{Somar dois números introduzidos pelo utilizador}
+		\inputminted{python}{sumTwoInts.py}
+	\end{frame}
+	
+	\subsection*{Usando listas}
+	\begin{frame}[fragile]
+		\frametitle{Usando listas}
+		\inputminted{python}{lists.py}
+	\end{frame}
+	
+	\subsection*{Prints com formatação}
+	\begin{frame}[fragile]
+		\frametitle{Prints com formatação}
+		\inputminted[breaklines]{python}{formattedPrinting.py}
+	\end{frame}
+	
+	\subsection*{Questões}
+	\begin{frame}
+		\begin{center}\huge{Questões?}\end{center}
+	\end{frame}
+	
+	%-------------------------------------------------
+	%--- Section 3: Class (OOP)
+	%-------------------------------------------------
+	\section{Classes}
+	%-------------------------------------------------
+	\subsection*{Introdução}
+	\begin{frame}[fragile]
+		\frametitle{Introdução}
+		\begin{itemize}
+			\item Objectos; \pause
+			\item Instâncias; \pause
+			\item Métodos; \pause
+			\item Atributos; \pause
+			\item Herança.
+		\end{itemize}
+	\end{frame}
+	
+	\subsection*{Métodos especiais para objectos}
+	\begin{frame}[fragile]
+		\frametitle{Métodos especiais para objectos}
+		\begin{itemize}
+			\item \mint{python}|__init__()| \pause
+			\item \mint{python}|__del__()| \pause
+			\item \mint{python}|__repr__()| \pause
+			\item \mint{python}|__str__()| \pause
+			\item \mint{python}|__eq__()| \pause
+			\item \mint{python}|__ne__()| \pause
+			\item \mint{python}|__hash__()|
+		\end{itemize}
+	\end{frame}
+	
+	\subsection*{Exemplo}
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Trick}}
+		\inputminted[breaklines, firstline=4, lastline=13]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Trick}}
+		\inputminted[breaklines, firstline=15, lastline=24]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Dog}}
+		\inputminted[breaklines, firstline=27, lastline=35]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Dog}}
+		\inputminted[breaklines, firstline=37, lastline=45]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Dog}}
+		\inputminted[breaklines, firstline=47, lastline=57]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Dog}}
+		\inputminted[breaklines, firstline=59, lastline=66]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Competition}}
+		\inputminted[breaklines, firstline=69, lastline=76]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Competition}}
+		\inputminted[breaklines, firstline=78, lastline=87]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Competition}}
+		\inputminted[breaklines, firstline=88, lastline=94]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Competition}}
+		\inputminted[breaklines, firstline=96, lastline=103]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Competition}}
+		\inputminted[breaklines, firstline=104, lastline=107]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Competition}}
+		\inputminted[breaklines, firstline=109, lastline=113]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Competition}}
+		\inputminted[breaklines, firstline=115, lastline=124]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - class \texttt{Competition}}
+		\inputminted[breaklines, firstline=125, lastline=133]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - Utilização}
+		\inputminted[breaklines, firstline=136, lastline=136]{python}{classExample.py} \pause
+		\inputminted[breaklines, firstline=139, lastline=139]{python}{classExample.py} \pause
+		\inputminted[breaklines, firstline=140, lastline=140]{python}{classExample.py} \pause
+		\inputminted[breaklines, firstline=144, lastline=144]{python}{classExample.py} \pause
+		\inputminted[breaklines, firstline=145, lastline=145]{python}{classExample.py} \pause
+		\inputminted[breaklines, firstline=150, lastline=150]{python}{classExample.py} \pause
+		\inputminted[breaklines, firstline=151, lastline=151]{python}{classExample.py}
+	\end{frame}
+	
+	\begin{frame}[fragile]
+		\frametitle{Exemplo - Utilização}
+		\mint{pycon}{
+			>>> comp.podium()
+		} \pause
+		First Place:  rufus with 1 point(s)
+	\end{frame}
+	
+	\section*{}
+	\begin{frame}
+		\begin{center}
+			Vai um live coding?
+			\begin{figure}
+				\includegraphics[scale=0.17]{images/sir}
+			\end{figure}
+			{\faGithub} jrbartowski \hspace{1cm} {\faEnvelope} joaorgpires@gmail.com
+		\end{center}
+	\end{frame}
+
+\end{document}
