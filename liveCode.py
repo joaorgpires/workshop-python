@@ -17,7 +17,7 @@ class MyList(object):
 
     def addelement(self, item):
         if type(item) is not self.typeOfMyList:
-            raise TypeError("This item is not an " + str(self.typeOfMyList) + "!")
+            raise TypeError("This item is not an " + self.typeOfMyList + "!")
         else:
             self.lst.append(item)
 
